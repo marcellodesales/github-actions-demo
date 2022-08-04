@@ -5,4 +5,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: marcellodesales/checkout@main
+      - name: checks here
+        id: checks
+        uses: marcellodesales/checkout@main
+
+      - name: outputs here
+        run: |
+          echo ${{steps.checks.outputs.a}} and B=${{steps.checks.outputs.b}}
